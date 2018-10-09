@@ -7,12 +7,19 @@ class SpaceTest < Minitest::Test
     assert_instance_of Space, space
   end
 
-  def test_it_is_blank_when_initialized
+  def test_it_is_default_blank_when_initialized
     space = Space.new
-    assert_equal true, space.blank
+    assert_equal " ", space.blank
   end
 
-  def test_that_blank_can_change_when_hit
+  def test_that_blank_changes_to_H_when_hit
+    space = Space.new
+    assert_equal "H", space.hit
+  end
+
+  def test_that_blank_changes_to_M_when_missed
+    space = Space.new
+    assert_equal "M", space.miss
   end
 
 
