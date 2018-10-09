@@ -13,12 +13,12 @@ class SpaceTest < Minitest::Test
   end
 
   def test_that_blank_changes_to_H_when_hit
-    space = Space.new
+    space = Space.new(" ")
     assert_equal "H", space.hit
   end
 
   def test_that_blank_changes_to_M_when_missed
-    space = Space.new
+    space = Space.new(" ")
     assert_equal "M", space.miss
   end
 
