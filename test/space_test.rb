@@ -12,18 +12,15 @@ class SpaceTest < Minitest::Test
     assert_equal " ", space.blank
   end
 
-  def test_that_blank_changes_to_H_when_hit
-    space = Space.new(" ")
+  def test_that_space_can_change_to_H
+    space = Space.new("ship")
     assert_equal "H", space.hit
+    #we know that ship will probably be instance variable
   end
 
   def test_that_blank_changes_to_M_when_missed
-    space = Space.new(" ")
+    space = Space.new
     assert_equal "M", space.miss
   end
-
-
-
-
 
 end
