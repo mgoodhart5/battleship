@@ -1,6 +1,8 @@
 require './lib/space'
 class Board
 
-  def initialize(MAYBE SPACES)
-    @board = {SPACE THINGS}
+# work in progress
+  def initialize(maybe_spaces)
+    @board = maybe_spaces
+  end
 end

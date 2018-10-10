@@ -9,9 +9,10 @@ class BoardTest < Minitest::Test
   end
 
   def test_it_has_a_space
+    skip
     space = Space.new
     board = Board.new(@spaces)
-    assert_
+    # work in progress
   end
 
 

@@ -1,5 +1,5 @@
 class Space
-  attr_accessor :blank
+  attr_reader :blank
 
   def initialize(blank = " ")
     @blank = blank
