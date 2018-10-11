@@ -6,19 +6,15 @@ class Space
   end
 
   def hit
-    if @blank == "ship" || " "
-      #^^^^This will end up being just an instance variable of ship
+    if @blank != " "
+      # binding.pry
       @blank = "H"
-    else
-      #invalid entry, try again >>>GameClass?
     end
   end
 
   def miss
-    if @blank == blank
+    if @blank = " "
       @blank = "M"
-    else
-      # invalid entry, try again >>>GameClass?
     end
   end
 
