@@ -25,8 +25,11 @@ class BoardTest < Minitest::Test
   def test_state_of_space_can_be_altered
     space = Space.new
     board = Board.new(space)
+    # binding.pry
     assert_equal "H", space.hit
+
     assert_equal "M", space.miss
+    #expected "M" actual "nil"
   end
 
 end

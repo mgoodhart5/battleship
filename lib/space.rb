@@ -1,25 +1,22 @@
+require './lib/ship'
+
 class Space
   attr_reader :blank
 
-  def initialize(blank = " ")
-    @blank = blank
-  end
-
-  def hit
-    if @blank == "ship" || " "
-      #^^^^This will end up being just an instance variable of ship
-      @blank = "H"
-    else
-      #invalid entry, try again >>>GameClass?
-    end
+  def initialize
+    @blank = true
   end
 
   def miss
-    if @blank == blank
+    if @blank == true
       @blank = "M"
-    else
-      # invalid entry, try again >>>GameClass?
     end
+  end
+
+  def hit
+    @blank = "H"
+    # we know that this has to be dependent
+    # on whether a ship is present or not
   end
 
 end
