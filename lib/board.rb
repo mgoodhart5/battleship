@@ -4,9 +4,9 @@ class Board
   attr_accessor :grid
 
 # work in progress
-  def initialize(potato = Space.new)
+  def initialize(square = Space.new)
     @grid = []
-    @grid << potato
+    @grid << square
     # binding.pry
   end
 

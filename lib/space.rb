@@ -6,10 +6,11 @@ class Space
   end
 
   def hit
-    if @blank == @ship
+    if @blank == "ship" || " "
+      #^^^^This will end up being just an instance variable of ship
       @blank = "H"
     else
-      "M"#somehow says invalid entry, try again
+      #invalid entry, try again >>>GameClass?
     end
   end
 
@@ -17,12 +18,11 @@ class Space
     if @blank == blank
       @blank = "M"
     else
-      #somehow says invalid entry, try again
+      # invalid entry, try again >>>GameClass?
     end
   end
 
 end
-
 
 #way to load ship into space
 #ship class

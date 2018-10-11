@@ -10,6 +10,7 @@ class BoardTest < Minitest::Test
     assert_instance_of Board, board
   end
 
+# keep this one for now, refactor it later
   # def test_it_can_contain_spaces
   #   board = Board.new
   #   assert_equal ([]), board.grid
@@ -25,7 +26,7 @@ class BoardTest < Minitest::Test
     space = Space.new
     board = Board.new(space)
     assert_equal "H", space.hit
-    binding.pry
+    assert_equal "M", space.miss
   end
 
 end
