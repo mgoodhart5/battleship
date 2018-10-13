@@ -7,6 +7,7 @@ class Board
   def initialize(square = Space.new)
     @grid = []
     @grid << square
+    # hash....? who builds the board
     # binding.pry
   end
 

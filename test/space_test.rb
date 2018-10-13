@@ -17,6 +17,7 @@ class SpaceTest < Minitest::Test
   def test_that_blank_changes_to_M_when_missed
     space = Space.new
     assert_equal "M", space.miss
+    binding.pry
 
   end
 

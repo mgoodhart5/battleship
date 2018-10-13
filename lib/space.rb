@@ -12,7 +12,7 @@ class Space
       @blank = "M"
     end
   end
-
+#this can pretty much be one method
   def hit
     @blank = "H"
     # we know that this has to be dependent

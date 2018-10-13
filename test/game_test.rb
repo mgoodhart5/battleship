@@ -6,4 +6,6 @@ class GameTest < Minitest::Test
     game = Game.new()
     assert_instance_of Game, game
   end
+
+  
 end
