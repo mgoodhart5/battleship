@@ -11,6 +11,7 @@ class Board
       "A" => {"1" => Space.new, "2" => Space.new},
       "B" => { "1" => Space.new, "2" => Space.new}
     }
+    binding.pry
   end
 
   def space_printer
@@ -57,6 +58,7 @@ class Board
     valid_coordinates = ["A1", "A2", "B1", "B2"]
     # binding.pry
     valid_coordinates.include?(coordinate)
+    #rassoc
     #will check if on list of valid coordinates
     #if coordinate is in array of valid coordinates, array.include?
   end
@@ -64,6 +66,8 @@ class Board
   def horizontal_validation(coordinates)
     # if the ship is horizontal, then the coordinates
     # will all have the same keys
+    # coordinates.all? do |coordy|
+      #@spaces.keys.include?(coordy)
 
     # each horizontal line of spaces corresponds to a different key(letter)
     # see if there is a method to count number in hash
