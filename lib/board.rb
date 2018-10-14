@@ -30,38 +30,17 @@ class Board
 
   def validation_station(coordinates, ship_size)
     sani_coords = coordinates.upcase.split
-    if sani_coords.count == ship_size
-      check_both(sani_coords)
-    else
-      invalid_input
-      #LoopLyfe
-    end
-    # binding.pry
-    # bow = sani_coords.split[0]
-    # stern = sani_coords.split[1]
-    # whether or not the thing is on the board
-    # return true/false
-    #
-    # know about ship size
-  end
-
-  def check_both(sani_coords)
-    # binding.pry
-    sani_coords.all? do |coord|
-      on_board?(coord)
-      # binding.pry
-    end
+      if ship_size == 2
+        little_ship_validation(sani_coords)
+      elsif ship_size == 3
+        big_ship_validation(sani_coords)
+      else
+        puts "Try Again."
+        #LoopLife
+      end
 
   end
 
-  def on_board?(coordinate)
-    valid_coordinates = ["A1", "A2", "B1", "B2"]
-    # binding.pry
-    valid_coordinates.include?(coordinate)
-    #rassoc
-    #will check if on list of valid coordinates
-    #if coordinate is in array of valid coordinates, array.include?
-  end
 
   def little_ship_validation(coordinates)
     valid_little_ship = ["A1 A2", "A2 A3", "A3 A4", "B1 B2", "B2 B3", "B3 B4",
@@ -69,17 +48,6 @@ class Board
       "A1 B1", "B1 C1", "C1 D1", "A2 B2", "B2 C2", "C2 D2",
       "A3 B3", "B3 C3", "C3 D3", "A4 B4", "B4 C4", "C4 D4"]
       valid_little_ship.include?(coordinates)
-    # if the ship is horizontal, then the coordinates
-    # will all have the same keys
-
-    # coordinates.all? do |coordy|
-      #@spaces.keys.include?(coordy)
-
-    #hash length minus one
-
-
-    # each horizontal line of spaces corresponds to a different key(letter)
-    # see if there is a method to count number in hash
   end
 
   def big_ship_validation(coordinates)
@@ -87,7 +55,7 @@ class Board
       "C1 C3", "C2 C4", "D1 D3", "D2 D4",
       "A1 C1", "B1 D1", "A2 C2", "B2 D2",
       "A3 C3", "B3 D3", "A4 C4", "B4 D4"]
-
+      valid_big_ship.include?(coordinates)
   end
 
 
