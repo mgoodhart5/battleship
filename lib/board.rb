@@ -54,6 +54,7 @@ class Board
   def on_board?(coordinate)
     #will check if on list of valid coordinates
     #if coordinate is in array of valid coordinates, array.include?
+  end
 
   end
 # method that checks if the first and last coordinate are equal to ship's size

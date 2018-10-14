@@ -1,4 +1,4 @@
-require_relative './test_helper'
+require './test/test_helper'
 require './lib/space'
 require './lib/ship'
 
@@ -17,8 +17,6 @@ class SpaceTest < Minitest::Test
   def test_that_blank_changes_to_M_when_missed
     space = Space.new
     assert_equal "M", space.miss
-    binding.pry
-
   end
 
   def test_that_space_can_change_to_H
