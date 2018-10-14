@@ -1,12 +1,16 @@
 require 'pry'
+require './lib/board'
+require './lib/game'
 
 class Welcome
+
 
   def welcome_page
     puts "Welcome to Battleship, Player One."
     puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
     answer = gets.chomp
     if answer == "p"
+      # binding.pry
       play
     elsif
       answer == "i"
@@ -19,7 +23,14 @@ class Welcome
     end
   end
 
-
+  def play
+    puts "Computer player: 'Hello, honored adversary, my armada is in place.
+    Place your two ships.
+    Your first is two units long, and the second is three units long.
+    The grid has A1 at the top left, and D4 at the bottom right.' "
+    place_coordinates
+  end
+  
   def game_setup
     size = 1
     player_board = Board.new(size)
@@ -66,13 +77,6 @@ class Welcome
     #if invalid say invalid and call this method again LoopLife
   end
 
-  def play
-    puts "Computer player: 'Hello, honored adversary, my armada is in place.
-    Place your two ships.
-    Your first is two units long, and the second is three units long.
-    The grid has A1 at the top left, and D4 at the bottom right.' "
-    place_coordinates
-  end
 
   def invalid_input
     puts "Invalid entry."
