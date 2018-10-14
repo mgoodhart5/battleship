@@ -63,14 +63,29 @@ class Board
     #if coordinate is in array of valid coordinates, array.include?
   end
 
-  def horizontal_validation(coordinates)
+  def little_ship_validation(coordinates)
+    valid_little_ship = ["A1 A2", "A2 A3", "A3 A4", "B1 B2", "B2 B3", "B3 B4",
+      "C1 C2", "C2 C3", "C3 C4", "D1 D2", "D2 D3", "D3 D4",
+      "A1 B1", "B1 C1", "C1 D1", "A2 B2", "B2 C2", "C2 D2",
+      "A3 B3", "B3 C3", "C3 D3", "A4 B4", "B4 C4", "C4 D4"]
     # if the ship is horizontal, then the coordinates
     # will all have the same keys
+ validation_station
     # coordinates.all? do |coordy|
       #@spaces.keys.include?(coordy)
 
+    #hash length minus one
+
+
     # each horizontal line of spaces corresponds to a different key(letter)
     # see if there is a method to count number in hash
+  end
+
+  def big_ship_validation(coordinates)
+    valid_big_ship = ["A1 A3", "A2 A4", "B1 B3", "B2 B4", 
+      "C1 C3", "C2 C4", "D1 D3", "D2 D4",
+      "A1 C1", "B1 D1", "A2 C2", "B2 D2",
+      "A3 C3", "B3 D3", "A4 C4", "B4 D4"]
 
   end
 
