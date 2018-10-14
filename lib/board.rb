@@ -1,3 +1,4 @@
+require './battleship'
 require './lib/space'
 require './lib/ship'
 require 'pry'
@@ -28,8 +29,12 @@ class Board
 
   def validation_station(coordinates, ship_size)
     sani_coords = coordinates.upcase.split
-    check_both(sani_coords)
-
+    if sani_coords.count == ship_size
+      check_both(sani_coords)
+    else
+      invalid_input
+      #LoopLyfe
+    end
     # binding.pry
     # bow = sani_coords.split[0]
     # stern = sani_coords.split[1]
@@ -54,6 +59,15 @@ class Board
     valid_coordinates.include?(coordinate)
     #will check if on list of valid coordinates
     #if coordinate is in array of valid coordinates, array.include?
+  end
+
+  def horizontal_validation(coordinates)
+    # if the ship is horizontal, then the coordinates
+    # will all have the same keys
+
+    # each horizontal line of spaces corresponds to a different key(letter)
+    # see if there is a method to count number in hash
+
   end
 
 
