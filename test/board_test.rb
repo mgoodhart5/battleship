@@ -76,6 +76,8 @@ class BoardTest < Minitest::Test
     assert_equal false, board.horizontal_validation("A2 B2")
   end
 
+  def test
+
 
 
 
