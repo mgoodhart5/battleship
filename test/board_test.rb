@@ -70,28 +70,12 @@ class BoardTest < Minitest::Test
     assert_equal false, board.validation_station("C2 B2", 2)
   end
 
-  def test_horizontal_validation
+  def test_little_ship_validation
+    # skip
     board = Board.new(@spaces)
     user_input = "A2 B2"
-    assert_equal false, board.horizontal_validation("A2 B2")
+    assert_equal true, board.little_ship_validation("A2 B2")
   end
-
-  def test
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   # def tests_that_validation_station_checks_size_of_ship
   #   board = Board.new(@spaces)
   #   user_input = "c2 B2"

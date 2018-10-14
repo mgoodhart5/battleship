@@ -11,7 +11,7 @@ class Board
       "A" => {"1" => Space.new, "2" => Space.new},
       "B" => { "1" => Space.new, "2" => Space.new}
     }
-    binding.pry
+    # binding.pry
   end
 
   def space_printer
@@ -68,9 +68,10 @@ class Board
       "C1 C2", "C2 C3", "C3 C4", "D1 D2", "D2 D3", "D3 D4",
       "A1 B1", "B1 C1", "C1 D1", "A2 B2", "B2 C2", "C2 D2",
       "A3 B3", "B3 C3", "C3 D3", "A4 B4", "B4 C4", "C4 D4"]
+      valid_little_ship.include?(coordinates)
     # if the ship is horizontal, then the coordinates
     # will all have the same keys
- validation_station
+
     # coordinates.all? do |coordy|
       #@spaces.keys.include?(coordy)
 
@@ -82,7 +83,7 @@ class Board
   end
 
   def big_ship_validation(coordinates)
-    valid_big_ship = ["A1 A3", "A2 A4", "B1 B3", "B2 B4", 
+    valid_big_ship = ["A1 A3", "A2 A4", "B1 B3", "B2 B4",
       "C1 C3", "C2 C4", "D1 D3", "D2 D4",
       "A1 C1", "B1 D1", "A2 C2", "B2 D2",
       "A3 C3", "B3 D3", "A4 C4", "B4 D4"]
