@@ -5,9 +5,5 @@ class Game
     @player_board = player_board
     @computer_board = computer_board
   end
-
-
-
-
-
+  
 end

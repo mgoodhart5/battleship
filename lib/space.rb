@@ -4,7 +4,7 @@ class Space
   attr_reader :blank
 
   def initialize
-    @blank = true
+    @blank = " "
   end
 
   def miss
