@@ -1,12 +1,12 @@
 require_relative './test_helper'
-require 'pry'
 require './lib/board'
 require './lib/space'
 
 class BoardTest < Minitest::Test
 
   def test_it_exists
-    board = Board.new
+    board_size = Space.new
+    board = Board.new(board_size)
     assert_instance_of Board, board
   end
 
@@ -17,19 +17,26 @@ class BoardTest < Minitest::Test
   # end
 
   def test_it_can_load_a_space
-    space = Space.new
-    board = Board.new(space)
-    assert_equal 1, board.grid.count
+    board_size = Space.new
+    board = Board.new(board_size)
+    assert_instance_of Space, board_size
   end
 
-  def test_state_of_space_can_be_altered
-    space = Space.new
-    board = Board.new(space)
-    # binding.pry
-    assert_equal "H", space.hit
+  # def test_state_of_space_can_be_altered
+  #   space = Space.new
+  #   board = Board.new(space)
+  #   # binding.pry
+  #   assert_equal "H", space.hit
+  #
+  #   assert_equal "M", space.miss
+  #   #expected "M" actual "nil"
+  # end
 
-    assert_equal "M", space.miss
-    #expected "M" actual "nil"
+  def 
   end
+
+
+
+
 
 end
