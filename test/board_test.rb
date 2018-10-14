@@ -5,8 +5,8 @@ require './lib/space'
 class BoardTest < Minitest::Test
 
   def test_it_exists
-    board_size = Space.new
-    board = Board.new(board_size)
+    spaces = Space.new
+    board = Board.new(spaces)
     assert_instance_of Board, board
   end
 
@@ -15,11 +15,10 @@ class BoardTest < Minitest::Test
   #   assert_equal {}, board.spaces
   # end
 
-
   def test_it_can_load_a_space
-    board_size = Space.new
-    board = Board.new(board_size)
-    assert_instance_of Space, board_size
+    spaces = Space.new
+    board = Board.new(spaces)
+    assert_instance_of Space, spaces
   end
 
   # def test_state_of_space_can_be_altered
@@ -32,16 +31,9 @@ class BoardTest < Minitest::Test
   #   #expected "M" actual "nil"
   # end
 
-  def 
-  end
-
-
-
-
-
-
   def test_it_can_take_a_space
-    board = Board.new
+    spaces = Space.new
+    board = Board.new(spaces)
     # binding.pry
     assert_instance_of Space, board.spaces["A"]["1"]
   end
@@ -58,16 +50,53 @@ class BoardTest < Minitest::Test
 #     assert_equal expected, board.display
 #   end
   def test_we_can_have_a_mini_board
-    board = Board.new
+    skip
+    spaces = Space.new
+    board = Board.new(spaces)
     expected =
     "======
     . 1 2
     A
     B
     ======"
-    binding.pry
+    # binding.pry
     assert_equal expected, board.display
   end
+
+  def test_the_validity_of_the_validation_station
+    board = Board.new(@spaces)
+    user_input = "c2 B2"
+    # binding.pry
+    assert_equal false, board.validation_station("C2 B2", 2)
+  end
+
+  def test_horizontal_validation
+    board = Board.new(@spaces)
+    user_input = "A2 B2"
+    assert_equal false, board.horizontal_validation("A2 B2")
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # def tests_that_validation_station_checks_size_of_ship
+  #   board = Board.new(@spaces)
+  #   user_input = "c2 B2"
+  #   assert_equal
+  # end
+
+
 
   # def test_we_can_put_one_space_in_the_board
   #   skip

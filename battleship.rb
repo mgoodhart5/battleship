@@ -30,7 +30,7 @@ class Welcome
     The grid has A1 at the top left, and D4 at the bottom right.' "
     place_coordinates
   end
-  
+
   def game_setup
     size = 1
     player_board = Board.new(size)
@@ -41,6 +41,7 @@ class Welcome
   def place_first_ship(coordinates)
     # call parameter method
     if @game.player_board.validation_station(coordinates)
+      #we need to make sure that the ship size is passed in
     #place_the_first_ship
     else
       invalid_input
