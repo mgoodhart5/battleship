@@ -101,8 +101,11 @@ class BoardTest < Minitest::Test
     board = Board.new(@spaces)
     user_input_1 = "A2 B2"
     user_input_2 = "B2 B4"
-    assert_equal true, board.little_ship_validation(user_input_1)
-    assert_equal false, board.big_ship_validation(user_input_2, user_input_1)
+    assert_equal false, board.overlap_station(user_input_1, user_input_2)
+
+
+    # assert_equal true, board.little_ship_validation(user_input_1)
+    # assert_equal false, board.big_ship_validation(user_input_2, user_input_1)
 
   end
 

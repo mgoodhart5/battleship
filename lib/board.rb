@@ -51,22 +51,23 @@ class Board
       # binding.pry
   end
 
-  def big_ship_validation(big_ship_coords, little_ship_coords)
+  def big_ship_validation(big_ship_coords)
     # binding.pry
-    bsc = big_ship_coords.split
-    lsc = little_ship_coords.split
-    # binding.pry
-    bsc.each do |coords|
-      coords.include?(lsc)
-    end
-
-
     valid_big_ship = ["A1 A3", "A2 A4", "B1 B3", "B2 B4",
       "C1 C3", "C2 C4", "D1 D3", "D2 D4",
       "A1 C1", "B1 D1", "A2 C2", "B2 D2",
       "A3 C3", "B3 D3", "A4 C4", "B4 D4"]
       # if big_ship_coords.chars include?(little_ship_coords)
       valid_big_ship.include?(big_ship_coords)
+  end
+
+  def overlap_station(little_ship_coords, big_ship_coords)
+    if little_ship_validation(little_ship_coords) && big_ship_validation(big_ship_coords) == true
+      ship_array = little_ship_coords.split + big_ship_coords.split
+      final_ship_array = ship_array.uniq
+      ship_array.length == final_ship_array.length
+      #loop life with if statement
+    end
   end
 
 
