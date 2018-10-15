@@ -10,7 +10,7 @@ class Welcome
     puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
     answer = gets.chomp
     if answer == "p"
-      # binding.pry
+
       play
     elsif
       answer == "i"
@@ -20,6 +20,7 @@ class Welcome
       quit
     else
       invalid_input
+      binding.pry
     end
   end
 
@@ -90,16 +91,13 @@ class Welcome
     puts "4. If you hit a ship, it will be indicated with an 'H', a miss will be indicated with an 'M'."
     puts "5. Whoever sinks both of their opponent's ships wins!!"
     # binding.pry
-    puts "Would you like to (p)lay or (q)uit?"
+    puts "Would you like to play (y)es or (n)o?"
     choice = gets.chomp
-    if choice == "p"
-      # binding.pry
+    if choice == "y"
       play
-    elsif choice == "q"
-      # binding.pry
-      quit
+    elsif choice == "n"
+      puts "See ya"
     else
-      # binding.pry
       invalid_input
       instructions
     end
@@ -118,6 +116,6 @@ class Welcome
   end
 
 end
-#
+# #
 # welcome = Welcome.new
 # welcome.welcome_page
