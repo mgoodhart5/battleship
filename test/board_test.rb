@@ -5,7 +5,6 @@ require './lib/space'
 class BoardTest < Minitest::Test
 
   def test_it_exists
-    skip
     spaces = Space.new
     board = Board.new(spaces)
     assert_instance_of Board, board
@@ -17,7 +16,6 @@ class BoardTest < Minitest::Test
   # end
 
   def test_it_can_load_a_space
-    skip
     spaces = Space.new
     board = Board.new(spaces)
     assert_instance_of Space, spaces
@@ -34,7 +32,6 @@ class BoardTest < Minitest::Test
   # end
 
   def test_it_can_take_a_space
-    skip
     spaces = Space.new
     board = Board.new(spaces)
     # binding.pry
@@ -67,22 +64,19 @@ class BoardTest < Minitest::Test
     assert_equal expected, board.display
   end
 
-  def test_the_validity_of_the_validation_station
-    skip
+  def test_the_validity_of_the_sanitation_station
     board = Board.new(@spaces)
     user_input = "c2 B2"
-    assert_equal false, board.validation_station("c2 B2", 2)
+    assert_equal false, board.sanitation_station("c2 B2", 2)
   end
 
-  def test_the_validation_station_can_accept_invalid_input
-    skip
+  def test_the_sanitation_station_can_accept_invalid_input
     board = Board.new(@spaces)
     user_input = "33, X"
-    refute board.validation_station("33, X", 2)
+    refute board.sanitation_station("33, X", 2)
   end
 
   def test_little_ship_validation
-    skip
     board = Board.new(@spaces)
     user_input = "A2 B2"
 
@@ -90,23 +84,24 @@ class BoardTest < Minitest::Test
   end
 
   def test_big_ship_validation
-    skip
     board = Board.new(@spaces)
     user_input = "A1 A3"
     assert_equal true, board.big_ship_validation("A1 A3")
   end
 
   def test_little_ship_and_big_ship_cannot_overlap
-    # skip
     board = Board.new(@spaces)
     user_input_1 = "A2 B2"
     user_input_2 = "B2 B4"
     assert_equal false, board.overlap_station(user_input_1, user_input_2)
+  end
 
-
-    # assert_equal true, board.little_ship_validation(user_input_1)
-    # assert_equal false, board.big_ship_validation(user_input_2, user_input_1)
-
+  def test_the_validity_of_the_validation_station
+    board = Board.new(@spaces)
+    user_input_1 = "A1 A2"
+    user_input_2 = "B2 B4"
+    assert_equal true, board.validation_station(user_input_1, user_input_2)
+    refute board.validation_station("A3 B4", "A1 A3")
   end
 
 
