@@ -1,4 +1,3 @@
-require './battleship'
 require './lib/space'
 require './lib/ship'
 require 'pry'

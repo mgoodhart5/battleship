@@ -70,12 +70,19 @@ class Welcome
     puts "Enter the coordinates for your two unit ship:"
     game_setup
     placement_ship_1 = gets.chomp
-    validation_station(placement_ship_1, 2)
+    valid = @game.player_board.sanitation_station(placement_ship_1, 2)
+    if valid
+      puts "Yay!"
+    else
+      invalid_input
+    end
+
+
     # place 2-unit_ship
 
-    puts "Now enter the coordinates for your three unit ship:"
-    placement_ship_2 = gets.chomp
-    validation_station(placement_ship_2, 3)
+    # puts "Now enter the coordinates for your three unit ship:"
+    # placement_ship_2 = gets.chomp
+    # validation_station(placement_ship_2, 3)
     #if invalid say invalid and call this method again LoopLife
   end
 
@@ -117,5 +124,5 @@ class Welcome
 
 end
 # #
-# welcome = Welcome.new
-# welcome.welcome_page
+welcome = Welcome.new
+welcome.welcome_page
