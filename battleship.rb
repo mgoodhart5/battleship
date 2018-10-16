@@ -20,7 +20,7 @@ class Welcome
       quit
     else
       invalid_input
-      binding.pry
+      # binding.pry
     end
   end
 
@@ -66,24 +66,18 @@ class Welcome
     puts "Ships cannot overlap"
     puts "Ships can be laid either horizontally or vertically"
     puts "Coordinates must correspond to the first and last units of the ship."
-    puts "IE: you cannot put a two-unit ship on A1, A3."
-    puts "Enter the coordinates for your two unit ship:"
+    puts "IE: you cannot put a two-unit ship on A1 A3."
+    puts "Coordinates must be entered with a single space: B1 B2"
+    puts "Enter the coordinates for your two unit ship"
+
     game_setup
     placement_ship_1 = gets.chomp
-    valid = @game.player_board.sanitation_station(placement_ship_1, 2)
-    if valid
-      puts "Yay!"
-    else
-      invalid_input
-    end
+    puts "Now enter the coordinates for your three unit ship:"
+    placement_ship_2 = gets.chomp
 
 
-    # place 2-unit_ship
+    valid = @game.player_board.sanitation_station(placement_ship_1, placement_ship_2)
 
-    # puts "Now enter the coordinates for your three unit ship:"
-    # placement_ship_2 = gets.chomp
-    # validation_station(placement_ship_2, 3)
-    #if invalid say invalid and call this method again LoopLife
   end
 
 
