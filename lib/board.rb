@@ -8,8 +8,8 @@ class Board
 
   def initialize(spaces)
     @spaces = {
-      "A" => {"1" => Space.new, "2" => Space.new},
-      "B" => { "1" => Space.new, "2" => Space.new}
+      "A" => {"1" => Space.new("A1"), "2" => Space.new("A2")},
+      "B" => { "1" => Space.new("B1"), "2" => Space.new("B2")}
     }
     # binding.pry
   end
