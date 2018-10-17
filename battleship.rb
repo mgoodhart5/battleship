@@ -2,8 +2,7 @@ require 'pry'
 require './lib/board'
 require './lib/game'
 
-class Welcome
-
+class Battleship
 
   def welcome_page
     puts "Welcome to Battleship, Player One."
@@ -57,7 +56,7 @@ class Welcome
     puts "ENTER THE COORDINATES FOR YOU THREE UNIT SHIP:"
 
     placement_ship_2 = gets.chomp
-    valid = @game.player_board.sanitation_station(placement_ship_1, placement_ship_2)
+    valid = @game.player_board.validation_station(placement_ship_1, placement_ship_2)
   end
 
   def invalid_input
@@ -72,7 +71,6 @@ class Welcome
     puts "4. If you hit a ship, it will be indicated with an 'H', a miss will be indicated with an 'M'."
     puts "5. Whoever sinks both of their opponent's ships wins!!"
     puts "\n"
-    # binding.pry
     puts "Would you like to play (y)es or (n)o?"
     choice = gets.chomp
     if choice == "y"
@@ -98,5 +96,6 @@ class Welcome
   end
 
 end
-# welcome = Welcome.new
-# welcome.welcome_page
+#this needs to be hashed out in order for welcome_test to run
+battleship = Battleship.new
+battleship.welcome_page
