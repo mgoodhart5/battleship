@@ -26,8 +26,8 @@ class BoardTest < Minitest::Test
   end
 
   def test_we_can_have_a_mini_board
-    skip
     #this doesn't work because our actual board has spaces
+    skip
     coordinate = "A1"
     spaces = Space.new(coordinate)
     board = Board.new(spaces)
@@ -40,20 +40,20 @@ class BoardTest < Minitest::Test
     assert_equal expected, board.display
   end
 
-  def test_the_validity_of_the_sanitation_station
-    #this test works for functionality but we added the boat for demo viewing pleasure
+  def test_the_validity_of_the_validation_station
+    # this test works for functionality but we added the boat for demo viewing pleasure
     skip
     board = Board.new(@spaces)
     placement_ship_1 = "c2 c3"
     placement_ship_2 = "A1 A3"
-    assert_equal true, board.sanitation_station(placement_ship_1, placement_ship_2)
+    assert_equal true, board.validation_station(placement_ship_1, placement_ship_2)
   end
 
-  def test_the_sanitation_station_can_accept_invalid_input
+  def test_the_validation_station_can_accept_invalid_input
     board = Board.new(@spaces)
     placement_ship_1 = "33, X"
     placement_ship_2 = "A1 A3"
-    refute board.sanitation_station(placement_ship_1, placement_ship_2)
+    refute board.validation_station(placement_ship_1, placement_ship_2)
   end
 
   def test_little_ship_validation
@@ -73,14 +73,6 @@ class BoardTest < Minitest::Test
     user_input_1 = "A2 B2"
     user_input_2 = "B2 B4"
     assert_equal false, board.overlap_station(user_input_1, user_input_2)
-  end
-
-  def test_the_validity_of_the_validation_station
-    board = Board.new(@spaces)
-    user_input_1 = "A1 A2"
-    user_input_2 = "B2 B4"
-    assert_equal true, board.validation_station(user_input_1, user_input_2)
-    refute board.validation_station("A3 B4", "A1 A3")
   end
 
 end

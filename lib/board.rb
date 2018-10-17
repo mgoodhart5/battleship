@@ -1,6 +1,5 @@
 require './lib/space'
 require './lib/ship'
-require 'pry'
 
 class Board
   attr_accessor :spaces
@@ -24,11 +23,7 @@ class Board
     ======"
   end
 
-  def validation_station(little_ship_coords, big_ship_coords)
-    overlap_station(little_ship_coords, big_ship_coords) == true
-  end
-
-  def sanitation_station(placement_ship_1, placement_ship_2)
+  def validation_station(placement_ship_1, placement_ship_2)
     little_ship_coords = placement_ship_1.upcase
     big_ship_coords = placement_ship_2.upcase
     little_ship_validation(little_ship_coords)
