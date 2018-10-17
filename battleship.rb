@@ -25,10 +25,12 @@ class Welcome
   end
 
   def play
-    puts "Computer player: 'Hello, honored adversary, my armada is in place.
-    Place your two ships.
-    Your first is two units long, and the second is three units long.
-    The grid has A1 at the top left, and D4 at the bottom right.' "
+    puts "Computer player: 'Hello, honored adversary, my armada is in place."
+    puts "\n"
+    puts "It's time to place your ships."
+    puts "Your first is two units long, and the second is three units long."
+    puts "The grid has A1 at the top left, and D4 at the bottom right."
+    puts "\n"
     place_coordinates
   end
 
@@ -62,17 +64,22 @@ class Welcome
 
 
   def place_coordinates
-    puts "Ships cannot wrap around the board."
-    puts "Ships cannot overlap"
-    puts "Ships can be laid either horizontally or vertically"
-    puts "Coordinates must correspond to the first and last units of the ship."
-    puts "IE: you cannot put a two-unit ship on A1 A3."
+    puts "Your ships must abide by these parameters:"
+    puts "----------------------------------------"
+    puts "1. Ships cannot wrap around the board."
+    puts "2. Ships cannot overlap"
+    puts "3. Ships can be laid either horizontally or vertically"
+    puts "4. Coordinates must correspond to the first and last units of the ship."
+    puts "   IE: you cannot put a two-unit ship on A1 A3."
+    puts "----------------------------------------"
     puts "Coordinates must be entered with a single space: B1 B2"
-    puts "Enter the coordinates for your two unit ship"
+    # puts "Enter the coordinates for your two unit ship:"
+    puts "ENTER THE COORDINATES FOR YOUR TWO UNIT SHIP:"
 
     game_setup
     placement_ship_1 = gets.chomp
-    puts "Now enter the coordinates for your three unit ship:"
+    # puts "Now enter the coordinates for your three unit ship:"
+    puts "ENTER THE COORDINATES FOR YOU THREE UNIT SHIP:"
     placement_ship_2 = gets.chomp
 
 
@@ -86,11 +93,13 @@ class Welcome
   end
 
   def instructions
+    puts "\n"
     puts "1. Choose 'p' to play game."
     puts "2. You and computer player set ships."
-    puts "3. Take turns firing missiles at each others grids the idea is \n to destroy your enemies ships before they destroy yours."
+    puts "3. Take turns firing missiles at each others grids the idea is to destroy your enemies ships before they destroy yours."
     puts "4. If you hit a ship, it will be indicated with an 'H', a miss will be indicated with an 'M'."
     puts "5. Whoever sinks both of their opponent's ships wins!!"
+    puts "\n"
     # binding.pry
     puts "Would you like to play (y)es or (n)o?"
     choice = gets.chomp
