@@ -67,6 +67,16 @@ class Board
     final_ship_array = ship_array.uniq
     if ship_array.length == final_ship_array.length
       puts "Place ships"
+
+     puts ".  o ..
+     o . o o.o
+          ...oo
+            __[]__
+         __|_o_o_o\__
+         \~~~~~~~~~~/
+          \. ..  . /
+     ""^^^^^^^^^^^^^^^^^^^^"
+
     else
       puts "WRONG"
     end
