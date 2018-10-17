@@ -39,21 +39,6 @@ class Welcome
     @game = Game.new(player_board, computer_board)
   end
 
-  def place_first_ship(coordinates)
-    if @game.player_board.validation_station(coordinates)
-    else
-      place_coordinates
-    end
-  end
-
-  def place_second_ship(coordinates)
-    if @game.player_board.validation_station(coordinates)
-      binding.pry
-    else
-      place_coordinates
-    end
-  end
-
   def place_coordinates
     puts "Your ships must abide by these parameters:"
     puts "----------------------------------------"
@@ -113,6 +98,5 @@ class Welcome
   end
 
 end
-# #
-welcome = Welcome.new
-welcome.welcome_page
+# welcome = Welcome.new
+# welcome.welcome_page
