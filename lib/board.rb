@@ -61,8 +61,7 @@ class Board
     final_ship_array = ship_array.uniq
     if ship_array.length == final_ship_array.length
       puts "Place ships"
-
-     puts ".  o ..
+      puts ".  o ..
      o . o o.o
           ...oo
             __[]__
@@ -71,7 +70,7 @@ class Board
           \. ..  . /
      ""^^^^^^^^^^^^^^^^^^^^"
     else
-      false
+      puts "Invalid entry, try again. Restart."
     end
   end
 
