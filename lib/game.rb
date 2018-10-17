@@ -7,3 +7,6 @@ class Game
   end
 
 end
+
+# The idea is that we would have separate boards for the player
+# and the computer

@@ -25,7 +25,4 @@ class SpaceTest < Minitest::Test
     assert_equal "M", space.status
   end
 
-  # def test
-
-
 end

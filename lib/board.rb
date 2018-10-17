@@ -10,7 +10,6 @@ class Board
       "A" => {"1" => Space.new("A1"), "2" => Space.new("A2")},
       "B" => { "1" => Space.new("B1"), "2" => Space.new("B2")}
     }
-    # binding.pry
   end
 
   def space_printer
@@ -26,10 +25,8 @@ class Board
   end
 
   def validation_station(little_ship_coords, big_ship_coords)
-    binding.pry
     overlap_station(little_ship_coords, big_ship_coords) == true
   end
-
 
   def sanitation_station(placement_ship_1, placement_ship_2)
     little_ship_coords = placement_ship_1.upcase
@@ -39,14 +36,11 @@ class Board
     if little_ship_validation(little_ship_coords) && big_ship_validation(big_ship_coords)
       overlap_station(little_ship_coords, big_ship_coords)
     else
-      puts "invalid entry"
+      false
     end
-
   end
 
-
   def little_ship_validation(little_ship_coords)
-    # binding.pry
     valid_little_ship = ["A1 A2", "A2 A3", "A3 A4", "B1 B2", "B2 B3", "B3 B4",
       "C1 C2", "C2 C3", "C3 C4", "D1 D2", "D2 D3", "D3 D4",
       "A1 B1", "B1 C1", "C1 D1", "A2 B2", "B2 C2", "C2 D2",
@@ -76,19 +70,9 @@ class Board
          \~~~~~~~~~~/
           \. ..  . /
      ""^^^^^^^^^^^^^^^^^^^^"
-
     else
-      puts "WRONG"
+      false
     end
   end
 
-
-
-# method that checks if the first and last coordinate are equal to ship's size
-# coordinates must correspond to the first and last units of the ship
-# method that checks if ship is not wrapping around board
-
-#ship cannot wrap around the board
-#ship cannot be on top of another ship
-# ship cannot be placed diagonally
 end

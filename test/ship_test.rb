@@ -13,6 +13,4 @@ class ShipTest < Minitest::Test
     assert_equal "A1 A2", ship.location
   end
 
-
-
 end
