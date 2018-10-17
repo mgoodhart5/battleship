@@ -10,7 +10,6 @@ class Welcome
     puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
     answer = gets.chomp
     if answer == "p"
-
       play
     elsif
       answer == "i"
@@ -20,7 +19,6 @@ class Welcome
       quit
     else
       invalid_input
-      # binding.pry
     end
   end
 
@@ -41,28 +39,6 @@ class Welcome
     @game = Game.new(player_board, computer_board)
   end
 
-  def place_first_ship(coordinates)
-    # call parameter method
-    if @game.player_board.validation_station(coordinates)
-      #we need to make sure that the ship size is passed in
-    #place_the_first_ship
-    else
-      invalid_input
-      place_coordinates
-    end
-  end
-
-  def place_second_ship(coordinates)
-    # call parameter method
-    if @game.player_board.validation_station(coordinates)
-    #place_the_second_ship
-    else
-      invalid_input
-      place_coordinates
-    end
-  end
-
-
   def place_coordinates
     puts "Your ships must abide by these parameters:"
     puts "----------------------------------------"
@@ -73,20 +49,16 @@ class Welcome
     puts "   IE: you cannot put a two-unit ship on A1 A3."
     puts "----------------------------------------"
     puts "Coordinates must be entered with a single space: B1 B2"
-    # puts "Enter the coordinates for your two unit ship:"
     puts "ENTER THE COORDINATES FOR YOUR TWO UNIT SHIP:"
 
     game_setup
     placement_ship_1 = gets.chomp
-    # puts "Now enter the coordinates for your three unit ship:"
+
     puts "ENTER THE COORDINATES FOR YOU THREE UNIT SHIP:"
+
     placement_ship_2 = gets.chomp
-
-
     valid = @game.player_board.sanitation_station(placement_ship_1, placement_ship_2)
-
   end
-
 
   def invalid_input
     puts "Invalid entry."
@@ -126,6 +98,5 @@ class Welcome
   end
 
 end
-# #
-welcome = Welcome.new
-welcome.welcome_page
+# welcome = Welcome.new
+# welcome.welcome_page

@@ -5,54 +5,31 @@ require './lib/space'
 class BoardTest < Minitest::Test
 
   def test_it_exists
-    spaces = Space.new
+    coordinate = "A1"
+    spaces = Space.new(coordinate)
     board = Board.new(spaces)
     assert_instance_of Board, board
   end
 
-  # def test_it_has_a_space_holder
-  #   board = Board.new
-  #   assert_equal {}, board.spaces
-  # end
-
   def test_it_can_load_a_space
-    spaces = Space.new
+    coordinate = "A1"
+    spaces = Space.new(coordinate)
     board = Board.new(spaces)
     assert_instance_of Space, spaces
   end
 
-  # def test_state_of_space_can_be_altered
-  #   space = Space.new
-  #   board = Board.new(space)
-  #   # binding.pry
-  #   assert_equal "H", space.hit
-  #
-  #   assert_equal "M", space.miss
-  #   #expected "M" actual "nil"
-  # end
-
   def test_it_can_take_a_space
-    spaces = Space.new
+    coordinate = "A1"
+    spaces = Space.new(coordinate)
     board = Board.new(spaces)
-    # binding.pry
     assert_instance_of Space, board.spaces["A"]["1"]
   end
 
-#   def test_we_can_see_a_board
-
-#     board = Board.new
-#     expected = "===========
-# . 1 2 3 4
-# A
-# B
-# C
-# D
-# ==========="
-#     assert_equal expected, board.display
-#   end
   def test_we_can_have_a_mini_board
     skip
-    spaces = Space.new
+    #this doesn't work because our actual board has spaces
+    coordinate = "A1"
+    spaces = Space.new(coordinate)
     board = Board.new(spaces)
     expected =
     "======
@@ -60,26 +37,28 @@ class BoardTest < Minitest::Test
     A
     B
     ======"
-    # binding.pry
     assert_equal expected, board.display
   end
 
   def test_the_validity_of_the_sanitation_station
+    #this test works for functionality but we added the boat for demo viewing pleasure
+    skip
     board = Board.new(@spaces)
-    user_input = "c2 B2"
-    assert_equal false, board.sanitation_station("c2 B2", 2)
+    placement_ship_1 = "c2 c3"
+    placement_ship_2 = "A1 A3"
+    assert_equal true, board.sanitation_station(placement_ship_1, placement_ship_2)
   end
 
   def test_the_sanitation_station_can_accept_invalid_input
     board = Board.new(@spaces)
-    user_input = "33, X"
-    refute board.sanitation_station("33, X", 2)
+    placement_ship_1 = "33, X"
+    placement_ship_2 = "A1 A3"
+    refute board.sanitation_station(placement_ship_1, placement_ship_2)
   end
 
   def test_little_ship_validation
     board = Board.new(@spaces)
     user_input = "A2 B2"
-
     assert_equal true, board.little_ship_validation("A2 B2")
   end
 
@@ -104,13 +83,4 @@ class BoardTest < Minitest::Test
     refute board.validation_station("A3 B4", "A1 A3")
   end
 
-
-
-  # def test_we_can_put_one_space_in_the_board
-  #   skip
-  #
-  #   board = Board.new
-  #   binding.pry
-  #   assert_equal 4,
-  # end
 end

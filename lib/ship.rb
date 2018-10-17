@@ -7,3 +7,6 @@ class Ship
   end
 
 end
+
+# The ship would be aware of its size and location.  It would
+# therefore know when it had been sunk.

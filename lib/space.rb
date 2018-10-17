@@ -14,17 +14,11 @@ class Space
   end
 
   def fire_upon
-    #if theres a ship in the space, it needs to be H
-    # if theres no ship, it need to be M
     if @has_ship == true
       @status = "H"
     else
       @status = "M"
     end
-
   end
-
-
-
 
 end
